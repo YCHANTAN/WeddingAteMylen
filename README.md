@@ -28,7 +28,7 @@ Edit event content in `src/data/wedding.ts`, layout in `src/pages/index.astro`, 
 
 ## Wedding information
 
-The ceremony is at **6:00 AM** and the reception is at **11:00 AM** on October 29, 2026, in local Cebu time, as confirmed by the user. The user supplied the reception location as `7VC5+RG2, Cogon Pardo, Cebu City, 6000 Cebu` and the church location as `7VH3+RR5, Cebu S Rd, Cebu City, 6000 Cebu`. Ceremony, Reception, and A little note only switch the visible information. Only the dedicated Open in Google Maps buttons open a map. Plus Codes remain in the destination URLs; the invitation displays readable location names. The dress code is Blue and White, shown in A little note. RSVP, hashtag, countdown, timed calendar export, and music are not enabled. The gift note uses the grammatical edit proposed in DESIGN_SPEC.md for preview review.
+The ceremony is at **6:00 AM** and the reception is at **11:00 AM** on October 29, 2026, in local Cebu time, as confirmed by the user. The user supplied the reception location as `7VC5+RG2, Cogon Pardo, Cebu City, 6000 Cebu` and the church location as `7VH3+RR5, Cebu S Rd, Cebu City, 6000 Cebu`. Ceremony, Reception, and A little note only switch the visible information. Only the dedicated Open in Google Maps buttons open a map. Map URLs use the verified latitude and longitude of each supplied pin so the phone app does not need to resolve Plus Code address text. The invitation displays readable location names. The dress code is Blue and White, shown in A little note. RSVP, hashtag, countdown, timed calendar export, and music are not enabled. The gift note uses the grammatical edit proposed in DESIGN_SPEC.md for preview review.
 
 ## Photo preparation
 
