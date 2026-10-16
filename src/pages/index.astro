@@ -1,0 +1,151 @@
+---
+import '@fontsource/cormorant-garamond/latin-400.css';
+import '@fontsource/cormorant-garamond/latin-400-italic.css';
+import '@fontsource/inter/latin-400.css';
+import '@fontsource/inter/latin-500.css';
+import '../styles/global.css';
+import { wedding } from '../data/wedding';
+import WeddingRings from '../components/WeddingRings.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Open Arnel and Marilyn's wedding invitation for October 29, 2026." />
+<meta name="theme-color" content="#e8eef1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Arnel & Marilyn — You're invited</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+<main class="experience">
+  <div class="page-mark" aria-label="Arnel and Marilyn's wedding"><WeddingRings class="page-rings" /><span>A <i>&</i> M</span></div>
+    <div class="envelope-scene">
+      <p class="eyebrow envelope-intro">A little envelope. A beautiful beginning.</p>
+      <button class="envelope" id="open-invitation" aria-expanded="false" aria-controls="invitation" aria-label="Open Arnel and Marilyn's wedding invitation">
+        <span class="envelope-back"></span>
+        <span class="letter-peek" aria-hidden="true">A & M</span>
+        <span class="envelope-pocket"></span>
+        <span class="envelope-flap"></span>
+        <span class="wax-seal" aria-hidden="true"><WeddingRings class="seal-rings" /></span>
+        <img class="envelope-florals" src="/images/blue-rose-corner.webp" width="200" height="300" alt="" aria-hidden="true" />
+        <span class="envelope-address" aria-hidden="true"><span>With love,</span><strong>Arnel & Marilyn</strong><span>29 OCTOBER 2026</span></span>
+      </button>
+      <p class="open-hint">Click the seal to open <span aria-hidden="true">↗</span></p>
+    </div>
+  <div class="scene" id="scene">
+    <section class="invitation-card" id="invitation" aria-labelledby="couple-names">
+      <div class="portrait-panel">
+        <div class="portrait-border" aria-hidden="true"></div>
+        <span class="portrait-kicker" aria-hidden="true">A moment. A promise. A lifetime.</span>
+        <div class="portrait-view">
+          <img class="couple-photo preferred-portrait active" id="portrait-1" src="/images/couple-invitation-portrait.webp" width="628" height="830" fetchpriority="high" alt="Arnel kisses Marilyn's forehead in the portrait from their blue floral invitation." />
+          <img class="couple-photo secondary" id="portrait-2" src="/images/couple-01-restored.webp" width="707" height="482" alt="Arnel and Marilyn holding hands in their original pose." hidden />
+        </div>
+        <div class="portrait-controls" aria-label="Choose couple portrait">
+          <button class="portrait-dot selected" type="button" data-portrait="1" aria-pressed="true" aria-label="Show invitation portrait"><span></span></button>
+          <button class="portrait-dot" type="button" data-portrait="2" aria-pressed="false" aria-label="Show holding-hands portrait"><span></span></button>
+        </div>
+        <span class="photo-caption" aria-hidden="true">Together, a new beginning</span>
+      </div>
+      <div class="card-content">
+        <img class="card-floral floral-top" src="/images/blue-rose-corner.webp" width="200" height="300" alt="" aria-hidden="true" />
+        <img class="card-floral floral-bottom" src="/images/blue-rose-corner.webp" width="200" height="300" alt="" aria-hidden="true" />
+        <button class="close-card" id="close-invitation" type="button" aria-label="Close invitation and return to envelope"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17" /></svg></button>
+        <WeddingRings class="card-rings" />
+        <p class="eyebrow">The wedding of</p>
+        <h1 id="couple-names" tabindex="-1">Arnel <em>&</em> Marilyn</h1>
+        <p class="invitation-line">Please join us to celebrate our love<br /> and new beginnings.</p>
+        <div class="date-lockup"><span class="date-month">October</span><span class="date-day">29</span><span class="date-year">2026</span></div>
+        <p class="navigation-hint">Tap a button to view the details <span aria-hidden="true">↓</span></p>
+        <div class="card-tabs" role="tablist" aria-label="Wedding information">
+          <button role="tab" id="tab-ceremony" aria-selected="true" aria-controls="panel-ceremony" data-tab="ceremony" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v5M9.5 4.5h5M5 21V11l7-5 7 5v10M3 21h18M10 21v-6h4v6" /></svg><span>Ceremony</span><span class="tab-arrow" aria-hidden="true">›</span></button>
+          <button role="tab" id="tab-reception" aria-selected="false" aria-controls="panel-reception" tabindex="-1" data-tab="reception" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8M5 10v11h14V10M10 21v-7h4v7" /></svg><span>Reception</span><span class="tab-arrow" aria-hidden="true">›</span></button>
+          <button role="tab" id="tab-note" aria-selected="false" aria-controls="panel-note" tabindex="-1" data-tab="note" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v13H3ZM3 6l9 7 9-7" /></svg><span>A little note</span><span class="tab-arrow" aria-hidden="true">›</span></button>
+        </div>
+        <div class="information-window">
+          <div role="tabpanel" id="panel-ceremony" aria-labelledby="tab-ceremony" tabindex="0">
+            <h2>{wedding.ceremony.venue}</h2><p class="event-time"><time datetime={wedding.ceremony.time24}>{wedding.ceremony.time}</time></p><p>{wedding.ceremony.address}</p>
+            <a class="map-link" href={wedding.ceremony.map} target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Open in Google Maps</span><span aria-hidden="true">↗</span></a>
+          </div>
+          <div role="tabpanel" id="panel-reception" aria-labelledby="tab-reception" tabindex="0" hidden>
+            <h2>At home, with our loved ones.</h2><p class="event-time"><time datetime={wedding.reception.time24}>{wedding.reception.time}</time></p><p>{wedding.reception.address}</p>
+            <a class="map-link" href={wedding.reception.map} target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Open in Google Maps</span><span aria-hidden="true">↗</span></a>
+          </div>
+          <div role="tabpanel" id="panel-note" aria-labelledby="tab-note" tabindex="0" hidden>
+            <h2>Your presence is our greatest gift.</h2><p class="gift-copy">{wedding.giftNote}</p>
+            <div class="dress-code"><p class="dress-label">Dress code colors</p><p class="dress-colors"><span class="color-swatch blue" aria-hidden="true"></span><span class="color-swatch white" aria-hidden="true"></span>{wedding.dressCode}</p></div>
+          </div>
+        </div>
+        <p class="card-signoff">With love, always <span aria-hidden="true">♡</span></p>
+      </div>
+    </section>
+  </div>
+  <p class="page-footer">A celebration of love <span aria-hidden="true">·</span> {wedding.city}</p>
+</main>
+<script>
+const scene = document.querySelector<HTMLElement>('#scene')!;
+const card = document.querySelector<HTMLElement>('#invitation')!;
+const envelopeScene = document.querySelector<HTMLElement>('.envelope-scene')!;
+const openButton = document.querySelector<HTMLButtonElement>('#open-invitation')!;
+const closeButton = document.querySelector<HTMLButtonElement>('#close-invitation')!;
+document.documentElement.classList.add('interactive');
+card.inert = true;
+card.setAttribute('aria-hidden', 'true');
+const setOpen = (open: boolean) => {
+  scene.classList.toggle('is-open', open);
+  document.body.classList.toggle('invitation-open', open);
+  openButton.setAttribute('aria-expanded', String(open));
+  card.inert = !open;
+  card.setAttribute('aria-hidden', String(!open));
+  envelopeScene.inert = open;
+  envelopeScene.setAttribute('aria-hidden', String(open));
+  if (open) document.querySelector<HTMLElement>('#couple-names')!.focus({ preventScroll: true });
+  else openButton.focus({ preventScroll: true });
+  window.scrollTo({ top: 0, behavior: 'instant' });
+};
+openButton.addEventListener('click', () => setOpen(true));
+closeButton.addEventListener('click', () => setOpen(false));
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && scene.classList.contains('is-open')) setOpen(false);
+});
+const tabs = [...document.querySelectorAll<HTMLButtonElement>('[data-tab]')];
+const selectTab = (tab: HTMLButtonElement) => {
+  tabs.forEach(button => {
+    const active = button === tab;
+    button.setAttribute('aria-selected', String(active));
+    button.tabIndex = active ? 0 : -1;
+    document.querySelector<HTMLElement>('#panel-' + button.dataset.tab)!.hidden = !active;
+  });
+};
+tabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => {
+    selectTab(tab);
+    
+  });
+  tab.addEventListener('keydown', event => {
+    let next = index;
+    if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+    else if (event.key === 'ArrowLeft') next = (index - 1 + tabs.length) % tabs.length;
+    else if (event.key === 'Home') next = 0;
+    else if (event.key === 'End') next = tabs.length - 1;
+    else return;
+    event.preventDefault(); selectTab(tabs[next]); tabs[next].focus();
+  });
+});
+document.querySelectorAll<HTMLButtonElement>('[data-portrait]').forEach(button => {
+  button.addEventListener('click', () => {
+    document.querySelectorAll<HTMLButtonElement>('[data-portrait]').forEach(item => {
+      const active = item === button;
+      item.setAttribute('aria-pressed', String(active));
+      item.classList.toggle('selected', active);
+      const portrait = document.querySelector<HTMLImageElement>('#portrait-' + item.dataset.portrait)!;
+      portrait.hidden = !active;
+      portrait.classList.toggle('active', active);
+    });
+  });
+});
+</script>
+</body>
+</html>
