@@ -18,7 +18,7 @@ Open the local address printed by Astro, normally http://127.0.0.1:4321/. Build 
 ## What is implemented
 
 - One invitation card revealed by clicking a blue envelope. The flap opens, the letter lifts, and the card appears.
-- Ceremony, reception, and gift-note tabs; portrait switching; close-to-envelope control; Escape and arrow-key support.
+- Ceremony, reception, gift note, and dress code displayed together without navigation tabs; portrait switching; close-to-envelope control and Escape support.
 - Ivory, powder blue, and midnight palette; self-hosted Cormorant Garamond and Inter.
 - Restrained envelope and card transitions with reduced-motion CSS.
 - Semantic headings, skip link, visible keyboard focus, image descriptions, and print styles.
